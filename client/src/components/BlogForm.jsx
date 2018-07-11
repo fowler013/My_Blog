@@ -30,18 +30,19 @@ class BlogForm extends Component {
                     value={this.state.title}
                     onChange={(event) => { this.handleInputChange(event.target.value) }}
                     className="form-control w-70 m-2 d-inline"
-                    placeholder="Give me a title"
+                    placeholder="Blog Title"
                 />
-                <input
-                    value={this.state.content}
-                    onChange={(event) => { this.handleContentChange(event.target.value) }}
-                    className="form-control w-70 m-2 d-inline"
-                    placeholder="Tell me about your unexceptional life"
-                />
+                <div className="form-group">
+                    <textarea value={this.state.content}
+                 onChange={(event) => { this.handleContentChange(event.target.value) }}
+                 className="form-control w-70 m-2 d-inline"
+                 placeholder="Entire"></textarea>
+                </div>
+                
                 <button
                     onClick={() => { this.props.postBlog(this.state) }}
                     type="button"
-                    className="btn btn-primary m-2">Post!
+                    className="btn btn-danger m-2">Post blog!
                 </button>
             </form>
         );
