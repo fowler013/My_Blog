@@ -21,7 +21,7 @@ class BlogForm extends Component {
 
     render() {
         return (
-            <form className="card p-3 m-1">
+            <form className="card p-3 m-1 bg-info">
                 <label
                     htmlFor="title-input"
                     className="d-block m-2">{this.props.action} post:

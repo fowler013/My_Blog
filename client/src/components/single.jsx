@@ -64,7 +64,7 @@ class Single extends React.Component {
         let post = this.state.blog;
         return (
             <div>
-                <div className="card m-1">
+                <div className="card m-1 bg-info">
                     <div className="card-body text-left">
                         <p className="card-text">
                             {post.title}
@@ -77,13 +77,12 @@ class Single extends React.Component {
 
 
                 <div className="container">
-                    <div key={this.state.blog.id} className="card m-1">
+                    <div key={this.state.blog.id} className="card m-1 bg-info">
                         <div className="card-body text-left">
 
                         </div>
-                        <button id={this.state.blog.id} className="delete"
-                            onClick={() => { this.deleteBlog(); }}
-                        >Delete</button>
+                        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => { this.deleteBlog(); }}>DELETE</button>
+                        
                     </div >
                 </div>
 
