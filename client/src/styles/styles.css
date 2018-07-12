@@ -1,0 +1,24 @@
+body {
+    background-color: gray;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/736x/6b/ca/5a/6bca5a25091570605f1998bd4a65409d.jpg");
+}
+
+.deleteContainer{
+    background-image: url("https://s-media-cache-ak0.pinimg.com/736x/6b/ca/5a/6bca5a25091570605f1998bd4a65409d.jpg");
+}
+
+
+
+.formAuthor{
+    
+    color: rgb(213, 225, 238);
+}
+
+.formTitle{
+   
+    color: rgb(8, 30, 54);
+}
+
+.cardFont{
+    font-family: 'Abril Fatface', cursive;
+}

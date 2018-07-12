@@ -6,9 +6,13 @@ class BlogForm extends Component {
         super(props);
 
         this.state = {
+            author: '', // adding the author to the blog//
             title: '',
             content: ''
         };
+    }
+    handleNameChange(author){
+        this.setState({author});
     }
 
     handleInputChange(title) {
@@ -21,28 +25,34 @@ class BlogForm extends Component {
 
     render() {
         return (
-            <form className="card p-3 m-1 bg-info">
+            <form className="card p-3 m-1 formContainer" >
                 <label
                     htmlFor="title-input"
-                    className="d-block m-2">{this.props.action} post:
+                    className="d-block m-2 text-dark cardFont">{this.props.action} post:
                 </label>
+                <input
+                    value={this.state.author}
+                    onChange={(event) => { this.handleNameChange(event.target.value) }}
+                    className="form-control w-70 m-2 d-inline text formAuthor cardFont"
+                    placeholder="Blog Author"
+                />
                 <input
                     value={this.state.title}
                     onChange={(event) => { this.handleInputChange(event.target.value) }}
-                    className="form-control w-70 m-2 d-inline"
+                    className="form-control w-70 m-2 d-inline formTitle cardFont"
                     placeholder="Blog Title"
                 />
                 <div className="form-group">
                     <textarea value={this.state.content}
                  onChange={(event) => { this.handleContentChange(event.target.value) }}
-                 className="form-control w-70 m-2 d-inline"
-                 placeholder="Entire"></textarea>
+                 className="form-control w-70 m-2 d-inline bg-light cardFont"
+                 placeholder="Whats on your mind..."></textarea>
                 </div>
                 
                 <button
                     onClick={() => { this.props.postBlog(this.state) }}
                     type="button"
-                    className="btn btn-danger m-2">Post blog!
+                    className="btn btn-dark text secondary m-2 cardFont">Post blog!
                 </button>
             </form>
         );

@@ -7,30 +7,59 @@ class Nav extends Component {
         super(props);
 
         this.state = {
-            blog: ''
+            blog: '',
+            scrollingLock: false
         };
+        this.handleScroll = this.handleScroll.bind(this);
     }
 
     handleInputChange(blog) {
         this.setState({ blog });
     }
 
+    componentDidMount(){
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    
+    handleScroll() {
+    
+      if (window.scrollY > 100) {
+        console.log("should lock");
+        this.setState({
+          scrollingLock: true
+        });
+      } else if (window.scrollY < 100) {
+        console.log("not locked" );
+        this.setState({
+          scrollingLock: false
+        });
+      }
+    
+    }
+
     render() {
         return (
-            <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
-                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <Link className="navbar-brand" to="/">Nivet's Blog</Link>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <Link className="nav-item nav-link active" to="/">Home <span className="sr-only">(current)</span></Link>
-                        <a className="nav-item nav-link" href="#">Show all entries</a>
-                        <a className="nav-item nav-link" href="#">Show a random entry</a>
+            <div className= " position-sticky sticky-top bg-white pt-3 pb-3" >
+                <nav className="navbar navbar-light formNav btn-light" style={{position: this.state.scrollingLock ? "fixed" : "relative"}}>
+                    <a className="navbar-brand" href="#" className="navbar-brand text-dark">
+                        <img src="http://d1nr5wevwcuzuv.cloudfront.net/product_photos/15075397/vampire_20weekend-2_original.jpg" width="50" height="50" className="d-inline-block align-top rounded-circle" alt="" />
+                    </a> <Link className="navbar-brand text-dark cardFont" to="/">  Oxford Comma </Link>
+                    <Link className="navbar-brand text-dark cardFont" to="/">Nivet's Blog</Link>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
 
+
+
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
+
+
         );
     };
 }
