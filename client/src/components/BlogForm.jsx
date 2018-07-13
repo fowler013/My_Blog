@@ -45,7 +45,7 @@ class BlogForm extends Component {
                 <div className="form-group">
                     <textarea value={this.state.content}
                  onChange={(event) => { this.handleContentChange(event.target.value) }}
-                 className="form-control w-70 m-2 d-inline bg-light cardFont"
+                 className="form-control w-70 m-2 d-inline bg-light formContent cardFont"
                  placeholder="Whats on your mind..."></textarea>
                 </div>
                 

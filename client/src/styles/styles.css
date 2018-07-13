@@ -11,7 +11,7 @@ body {
 
 .formAuthor{
     
-    color: rgb(213, 225, 238);
+    color: rgb(6, 22, 39);
 }
 
 .formTitle{
@@ -21,4 +21,8 @@ body {
 
 .cardFont{
     font-family: 'Abril Fatface', cursive;
+}
+
+.formContent{
+    color: rgb(3, 19, 36);
 }
