@@ -14,12 +14,14 @@ class Navigation extends Component {
             <Router>
                 <Fragment>
                     
+                    
+                    
+                    
                     <Nav  />
                     <Switch>
-
-                        <Route exact path="/" component={Blogs} />
-                        <Route exact path="/:id" component={SingleBlog} />
-                       <Route exact path = "/:about" component = {About} />
+                        <Route exact path="/" component = {Blogs} />
+                        <Route exact path="/:id" component = {SingleBlog} />
+                       <Route exact path = "/about" component = {About} />
                     </Switch>
                 </Fragment>
             </Router>

@@ -4,6 +4,7 @@ import express from 'express';
 import morgan from 'morgan';
 import routes from './routes';
 import stateRouting from './middleware/routing.mw';
+import configurePassport from './config/passport'
 
 const CLIENT_PATH = join(__dirname, '../../client');
 
@@ -12,6 +13,8 @@ let app = express();
 app.use(morgan('dev'));
 app.use(express.static(CLIENT_PATH));
 app.use(express.json());
+
+configurePassport(app)// this has to bee after you turn on the json body parser but it has to be before we use our /api routes//
 
 app.use('/api', routes);
 

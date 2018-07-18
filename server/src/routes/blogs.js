@@ -3,14 +3,19 @@ import Table from '../table';
 
 let router = Router();
 const blogsTable = new Table('Blogs');
+const tagTable = new Table('Tags')
 
 router.get('/', (req, res) => {
     blogsTable.getAll()
         .then((blogs) => {
-            res.json(blogs);
-        }).catch((err) => {
-            res.send(err);
-        });
+            tagTable.getAll()
+                .then(() => {
+                    res.json(blogs);
+                }).catch((err) => {
+                    res.send(err);
+                });
+        })
+
 });
 
 router.get('/:id', (req, res) => {
@@ -25,13 +30,21 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
     console.log(req.body);
-    blogsTable.insert(req.body)
+    let { author, title, content, tag } = req.body;
+
+    console.log(author);
+    blogsTable.insert({ author, title, content })
         .then(() => {
-            res.sendStatus(200);
-        }).catch((err) => {
-            console.log(err);
-            res.sendStatus(500);
-        });
+            tagTable.insert({ tag })
+                .then(() => {
+                    res.sendStatus(200);
+                }).catch((err) => {
+                    console.log(err)
+                    res.sendStatus(500)
+                })
+
+        })
+
 });
 
 router.put('/:id', (req, res) => {
