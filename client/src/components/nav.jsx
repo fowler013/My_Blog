@@ -54,7 +54,7 @@ class Nav extends Component {
 
     render() {
         return (
-            <div className=" position-sticky sticky-top bg-white pt-3 pb-3" >
+            <div className=" position-sticky sticky-top  pt-3 pb-3" >
                 <nav className="navbar navbar-light formNav btn-light" style={{ position: this.state.scrollingLock ? "fixed" : "relative" }}>
                     <a className="navbar-brand" href="#" className="navbar-brand text-dark">
                         <img src="http://d1nr5wevwcuzuv.cloudfront.net/product_photos/15075397/vampire_20weekend-2_original.jpg" width="50" height="50" className="d-inline-block align-top rounded-circle" alt="" onClick={() => { this.topFunction() }} />

@@ -50,7 +50,7 @@ class Blogs extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container"style= {{'paddingBottom': '11em'}}>
                 <BlogForm action="Create" postBlog={(post) => { this.addBlog(post); }} />
                 <BlogList blogs={this.state.blogs} />
             </div>
