@@ -3,12 +3,12 @@ body {
 	background-image: url("https://i.pinimg.com/236x/c3/75/cb/c375cbe604fd041e514b664deef72a2f--vampire-weekend-lyrics-music-bands.jpg");
 	/* background-size: cover;
 	background-repeat: no-repeat;
-	height: 1000px; */
-	/* width: 1000px; */
+	height: 2000px;  
+	 width: 1000px; */
 }
 
 .deleteContainer{
-    background-image: url("https://s-media-cache-ak0.pinimg.com/736x/6b/ca/5a/6bca5a25091570605f1998bd4a65409d.jpg");
+    background-image: url("https://i.pinimg.com/236x/c3/75/cb/c375cbe604fd041e514b664deef72a2f--vampire-weekend-lyrics-music-bands.jpg");
 }
 
 
@@ -33,7 +33,7 @@ body {
 
 .scroll-box {
     overflow-y: scroll;
-    height: 100px;
+    height: 320px;
     padding: 1rem;
 }
 
@@ -78,4 +78,13 @@ body {
 	-moz-transition: 0.5s;
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s; 	
+}
+
+.blogContainer{
+	height: 1000px; 
+	overflow-y: scroll;
+}
+
+.divContainer{
+padding-bottom: 16em;
 }

@@ -98,7 +98,7 @@ class Single extends React.Component {
                 </div>
 
 
-                <div className="container" style = {{ width:" 250px"}}>
+                <div className="container" style = {{ width:" 150px"}}>
                     <div key={this.state.blog.id} className="card m-1 deleteContainer">
                         <div className="card-body text-left">
 

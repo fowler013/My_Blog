@@ -33,24 +33,24 @@ class BlogForm extends Component {
             <form className="card p-3 m-1 formContainer" >
                 <label
                     htmlFor="title-input"
-                    className="d-block m-2 text-dark cardFont">{this.props.action} post:
+                    className="d-block m-1 text-dark cardFont">{this.props.action} post:
                 </label>
                 <input
                     value={this.state.author}
                     onChange={(event) => { this.handleNameChange(event.target.value) }}
-                    className="form-control w-70 m-2 d-inline text formAuthor cardFont"
+                    className="form-control w-70 m-1 d-inline text formAuthor cardFont"
                     placeholder="Blog Author"
                 />
                 <input
                     value={this.state.title}
                     onChange={(event) => { this.handleInputChange(event.target.value) }}
-                    className="form-control w-70 m-2 d-inline formTitle cardFont"
+                    className="form-control w-70 m-1 d-inline formTitle cardFont"
                     placeholder="Blog Title"
                 />
                 <div className="form-group">
                     <textarea value={this.state.content}
                  onChange={(event) => { this.handleContentChange(event.target.value) }}
-                 className="form-control w-70 m-2 d-inline bg-light formContent cardFont"
+                 className="form-control w-70 m-1 d-inline bg-light formContent cardFont"
                  placeholder="Whats on your mind..."></textarea>
                 </div>
                 <div className="form-group">
