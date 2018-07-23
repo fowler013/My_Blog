@@ -8,13 +8,10 @@ const tagTable = new Table('Tags')
 router.get('/', (req, res) => {
     blogsTable.getAll()
         .then((blogs) => {
-            tagTable.getAll()
-                .then(() => {
-                    res.json(blogs);
-                }).catch((err) => {
-                    res.send(err);
-                });
-        })
+            res.json(blogs);
+        }).catch((err) => {
+            res.send(err);
+        });
 
 });
 
@@ -35,14 +32,9 @@ router.post('/', (req, res) => {
     console.log(author);
     blogsTable.insert({ author, title, content })
         .then(() => {
-            tagTable.insert({ tag })
-                .then(() => {
-                    res.sendStatus(200);
-                }).catch((err) => {
-                    console.log(err)
-                    res.sendStatus(500)
-                })
-
+        }).catch((err) => {
+            console.log(err)
+            res.sendStatus(500)
         })
 
 });

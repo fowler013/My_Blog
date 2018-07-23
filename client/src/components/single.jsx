@@ -87,13 +87,7 @@ class Single extends React.Component {
                         <h5 className="card-text">
                             {post.content}
                         </h5>
-                        <label
-                    htmlFor="title-input"
-                    className="d-block m-2">{this.props.action} Tags:
-                </label>
-                        <h5 className="card-text">
-                            {post.tag}
-                        </h5>
+                        
                     </div>
                 </div>
 

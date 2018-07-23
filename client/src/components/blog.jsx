@@ -20,11 +20,6 @@ const Blog = (props) => {
               Author: <cite title="Source Title">{props.post.author}</cite>
             </small>
           </footer>
-          <footer className="blockquote-footer">
-            <small>
-              Tags: <cite title="Source Title">{props.post.tag}</cite>
-            </small>
-          </footer>
         </blockquote><Link to={`/${props.post.id}`} className="btn btn-secondary btn-sm">Expand</Link>
         </div>
         

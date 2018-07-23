@@ -8,8 +8,7 @@ class BlogForm extends Component {
         this.state = {
             author: '', // adding the author to the blog//
             title: '',
-            content: '',
-            tag: ''
+            content: ''
         };
     }
     handleNameChange(author){
@@ -24,9 +23,6 @@ class BlogForm extends Component {
         this.setState({ content });
     }
 
-    handleTagChange(tag){
-        this.setState({ tag })
-    }
 
     render() {
         return (
@@ -53,13 +49,6 @@ class BlogForm extends Component {
                  className="form-control w-70 m-1 d-inline bg-light formContent cardFont"
                  placeholder="Whats on your mind..."></textarea>
                 </div>
-                <div className="form-group">
-                    <input value={this.state.tag}
-                 onChange={(event) => { this.handleTagChange(event.target.value) }}
-                 className="form-control w-70 m-2 d-inline bg-light formContent cardFont"
-                 placeholder="tags" />
-                </div>
-                
                 <button
                     onClick={() => { this.props.postBlog(this.state) }}
                     type="button"
